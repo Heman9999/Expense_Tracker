@@ -1,0 +1,255 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.background{
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  gap: 50px;
+  overflow:hidden;
+  .Income{
+    width: 100%;
+    background-color: bisque;
+    height: 80%;
+    padding: 20px;
+    border-radius: 20px;
+    border-bottom: 10px solid blue;
+    border-top: 10px solid blue;
+    h2{
+      text-align: center;
+    }
+    .optionselector{
+      // background-color: black;
+      height: 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+          font-size: 30px;
+      }
+      select{
+        width: 50%;
+        height: 100%;
+        border: none;
+        text-align: center;
+        border-radius: 5px;
+        border-bottom: 4px solid blue;
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+    .IncomeGraph{
+      // background-color: black;
+      width: 100%;
+      height: 80%;
+      display: grid;
+      place-items: center;
+    }
+  }
+  .ExpenseTracker{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+      box-shadow: 5px 5px 10px 10px blue;
+    }
+    form{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 10px;
+      input[type="text"]{
+        width: 100%;
+      }
+      input[type="number"] {
+        width: 100%;
+      }
+      select{
+        height: 30px;
+        text-align: center;
+        border: none;
+        border-bottom: 1px solid blue;
+        border-radius: 10px;
+        &:focus{
+          outline: none;
+        }
+      }
+      input[type="text"] , input[type="date"],input[type="number"]{
+        border: none;
+        border-bottom: 2px solid blue;
+        text-align: center;
+        border-radius: 10px;
+        &:focus{
+          outline: none;
+        }
+      }
+      input[type="submit"]{
+        width: 100%;
+        height: 30px;
+        grid-area: 3/ span 2;
+      }
+    }
+    .History{
+      overflow-y:scroll;
+      width:100%;
+      height: 150px;
+      color: black;
+      .item{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 100px;
+        column-gap: 5px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2px;
+        button{
+          margin-top: 10px;
+          margin-bottom: 10px;
+          grid-area: 1 / 3 / span 2;
+          border-radius: 50%;
+          border: none;
+          border-bottom: 2px solid black;
+          &:active{
+            background-color: black;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .Expense{
+    width: 100%;
+    height: 80%;
+    background-color: azure;
+    padding: 20px;
+    border-radius: 20px;
+    border-bottom: 10px solid blue;
+    border-top: 10px solid blue;
+  
+    h2 {
+      text-align: center;
+    }
+  
+    .optionselector {
+      // background-color: black;
+      height: 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span{
+        font-size: 30px;
+      }
+      select {
+        width: 50%;
+        height: 100%;
+        border: none;
+        text-align: center;
+        border-radius: 5px;
+        border-bottom: 4px solid blue;
+  
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  
+    .ExpenseGraph {
+      width: 100%;
+      height: 80%;
+      display: grid;
+      place-items: center;
+    }
+  }
+}
+$destop-width : 1024px;
+$tablet-width : 786px;
+$phone-width : 640px; 
+
+@media (max-width : $destop-width) {
+  .background{
+    background-color: aqua;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media (max-width : $tablet-width){
+  .background{
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: blue;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 1px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+    .ExpenseTracker{
+      grid-area: 1 /  2 / span 2;
+      border-radius: 20px;
+      width: 100%;
+      height: 90%;
+    }
+    .Income{
+      height: 90%;
+      width: 90%;
+    }
+    .Expense{
+      height: 90%;
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width : $phone-width){
+  .background{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    .ExpenseTracker{
+      width: 100%;
+      height: 102%;
+      grid-area: 1;
+      border-radius: 10px;
+      &:hover{
+        box-shadow: none;
+      }
+    }
+    .Income {
+      width: 100%;
+      height: 100%;
+    }
+    .Expense{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
