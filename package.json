@@ -1,5 +1,5 @@
 {
-  "homepage":"heman9999.github.io/Expense_Tracker",
+  "homepage": "https://heman9999.github.io/Expense_Tracker",
   "name": "expense_tracker",
   "version": "0.1.0",
   "private": true,
@@ -19,8 +19,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "deploy":"npm run build",
-    "predeploy":"npm run gh-pages",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
